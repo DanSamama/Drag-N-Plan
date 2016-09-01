@@ -19,23 +19,22 @@
 <div ng-controller="blockController">
 
     <input type="text" placeholder="Search by Type" ng-model="searchBlock.type" />
-    <input type="text" placeholder="Search by content" ng-model="searchBlock.gender" />
 
-    <table class="block" ng-repeat="block in blocks | filter: searchBlock">
+    <input type="text" placeholder="Search any content" ng-model="searchText" />
+
+
+    <table class="block" ng-repeat="block in blocks | filter: searchBlock | filter:search">
         <tr >
-           <td class="blockType">{{block.type}}</td>
+            <td class="blockType">{{block.type}}</td>
             <td>{{block.miniTitle}}</td>
         </tr>
-
         <tr>
             <td><br/>{{block.length}}</td>
             <td></td>
         </tr>
-
         <tr>
             <td><br/><button class="attach" ng-click="blockMenu">add file</button></td>
             <td><br/><button class="blockMenu" ng-click="blockMenu"></button></td>
-
         </tr>
     </table>
 </div>
