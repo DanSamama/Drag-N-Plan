@@ -11,9 +11,11 @@
     margin: 2px;
 }
 .blockType {
-    height:50px;
-    width: 50px;
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 40px;
+    width: 40px;
     border: 1px solid gray;
-    padding:2px;
-    display:inline-block;
+    border-top-right-radius: 0px;
+    display: inline-block;
 }

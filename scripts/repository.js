@@ -35,8 +35,8 @@
         
         //search filter by any content existing in the block
       $scope.search = function(item) {
-        if ($scope.searchText == undefined){                    //we havent pronted anything in the search box yet. 
-            return true;                                        //if the func return true the element will be display every item (row) on the page
+        if ($scope.searchText == undefined){
+            return true;
         }
         else {
             if ((item.miniTitle.toLowerCase().indexOf($scope.searchText.toLowerCase())) != -1 ||
@@ -45,7 +45,7 @@
                 return true;
             }
         }
-        return false;                                   //if the item is not what the user looked for then don't return these rows. 
+        return false;                                   
     };
 
 
