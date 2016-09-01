@@ -17,6 +17,20 @@
                 {type: "Java", miniTitle: "Advanced Java", length: "30 Min"},
             ];
             $scope.blocks = blocks;
+
+              $scope.searchBlock = function(item) {
+        if ($scope.searchBlock.type == undefined){                    //we havent pronted anything in the search box yet.
+            return true;                                        //if the func return true the element will be display every item (row) on the page
+        }
+        else {
+            if ((item.type.toLowerCase().indexOf($scope.searchBlock.type.toLowerCase())) != -1)
+            {
+                return true;
+            }
+        }
+        return false;                                   //if the item is not what the user looked for then don't return these rows.
+    };
+
         })
 })
 ();

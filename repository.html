@@ -17,7 +17,11 @@
 </div>
 
 <div ng-controller="blockController">
-    <table ng-repeat="block in blocks"class="block">
+
+    <input type="text" placeholder="Search by Type" ng-model="searchBlock.type" />
+    <input type="text" placeholder="Search by content" ng-model="searchBlock.gender" />
+
+    <table class="block" ng-repeat="block in blocks | filter: searchBlock">
         <tr >
            <td class="blockType">{{block.type}}</td>
             <td>{{block.miniTitle}}</td>
