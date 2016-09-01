@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html data-ng-app="dragNdrop" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular%20(1).js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular-route.js"></script>
+    <script src="scripts/repository.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div ng-controller="repoController">
+    <span><h3>{{title}}</h3>{{titleDate}}</span>
+</div>
+
+<div ng-controller="blockController">
+    <table ng-repeat="block in blocks"class="block">
+        <tr >
+           <td class="blockType">{{block.type}}</td>
+            <td>{{block.miniTitle}}</td>
+        </tr>
+
+        <tr>
+            <td><br/>{{block.length}}</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td><br/><button class="attach" ng-click="blockMenu">add file</button></td>
+            <td><br/><button class="blockMenu" ng-click="blockMenu"></button></td>
+
+        </tr>
+    </table>
+</div>
+
+
+
+</body>
+</html>

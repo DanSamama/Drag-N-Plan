@@ -1,0 +1,19 @@
+.block {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 10px;
+    margin:2%;
+}
+
+.blockMenu {
+    float: right;
+    padding: 2px;
+    margin: 2px;
+}
+.blockType {
+    height:50px;
+    width: 50px;
+    border: 1px solid gray;
+    padding:2px;
+    display:inline-block;
+}
