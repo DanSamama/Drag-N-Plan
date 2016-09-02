@@ -56,11 +56,13 @@
 
     });
 
-   // //this function makes the list box droppable
-   //  myApp.controller("dropController", function ($scope) {
-   //
-   //  })
-   //
+
+    myApp.controller("typeController", function ($scope) {
+        $scope.addNewType = function() {
+            
     
+        }
+    })
+
 })
 ();

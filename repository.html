@@ -18,40 +18,51 @@
 </head>
 
 <body>
+
+
 <div ng-controller="repoController">
     <span><h3>{{title}}</h3>{{titleDate}}</span>
+</div>
+
+
+<div ng-controller="typeController" >
+    <button id="newType" ng-click="addNewType" >+</button>
+    <form id="createTypeForm" ng-show="createTypeForm">
+        <input type="color" value="color">
+    </form>
 </div>
 
 <div class="repositoryBox" ng-controller="blockController">
 
     <input type="text" placeholder="Search by Type" ng-model="searchBlock.type" />
-
     <input type="text" placeholder="Search any content" ng-model="searchText" />
 
 
     <div ng-repeat="block in blocks | filter: searchBlock | filter:search">
         <div class="block ui-widget-content" >
-        <div>
-            <div class="blockType">{{block.type}}</div>
-            <div class="miniTitle">{{block.miniTitle}}</div>
-        </div>
+            <div>
+                <div class="blockType">{{block.type}}</div>
+                <div class="miniTitle">{{block.miniTitle}}</div>
+            </div>
 
-        <div class="blockLength">
-            {{block.length}}
-        </div>
-        <div>
-            <button class="attach" ng-click="blockMenu">file</button>
-            <button class="blockMenu" ng-click="blockMenu"></button>
-        </div>
+            <div class="blockLength">
+                {{block.length}}
+            </div>
+            <div>
+
+                <input type="file" id="myFile">
+
+                <button class="blockMenu" ng-click="blockMenu"></button>
+            </div>
         </div>
     </div>
 
 </div>
 
-<!--the list view-->
-<div ng-controller="dropController" id="listBox" class="ui-widget-content">
+<!--&lt;!&ndash;the list view&ndash;&gt;-->
+<!--<div ng-controller="dropController" id="listBox" class="ui-widget-content">-->
 
-</div>
+<!--</div>-->
 
 
 
