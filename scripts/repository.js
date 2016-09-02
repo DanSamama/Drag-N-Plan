@@ -31,26 +31,36 @@
             }
             return false;                                   //if the item is not what the user looked for then don't return these rows.
         };
-        
-        
+
+
         //search filter by any content existing in the block
-      $scope.search = function(item) {
-        if ($scope.searchText == undefined){
-            return true;
-        }
-        else {
-            if ((item.miniTitle.toLowerCase().indexOf($scope.searchText.toLowerCase())) != -1 ||
-                (item.length.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 ))
-            {
+        $scope.search = function(item) {
+            if ($scope.searchText == undefined){
                 return true;
             }
-        }
-        return false;                                   
-    };
+            else {
+                if ((item.miniTitle.toLowerCase().indexOf($scope.searchText.toLowerCase())) != -1 ||
+                    (item.length.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 ))
+                {
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        //this function makes the blocks draggable
+        $(function () {
+            $(".block").draggable()
+        })
 
 
-        
+    });
 
-    })
+   // //this function makes the list box droppable
+   //  myApp.controller("dropController", function ($scope) {
+   //
+   //  })
+   //
+    
 })
 ();

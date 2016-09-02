@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="scripts/angular%20(1).js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="https://code.angularjs.org/1.5.7/angular.js"></script>
     <script src="https://code.angularjs.org/1.5.7/angular-route.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>"
     <script src="scripts/repository.js"></script>
     <link href="css/style.css" rel="stylesheet">
-    <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/jquery-ui-1.12.0/jquery-ui.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -24,7 +29,8 @@
     <input type="text" placeholder="Search any content" ng-model="searchText" />
 
 
-    <div class="block" ng-repeat="block in blocks | filter: searchBlock | filter:search">
+    <div ng-repeat="block in blocks | filter: searchBlock | filter:search">
+        <div class="block ui-widget-content" >
         <div>
             <div class="blockType">{{block.type}}</div>
             <div class="miniTitle">{{block.miniTitle}}</div>
@@ -37,12 +43,13 @@
             <button class="attach" ng-click="blockMenu">file</button>
             <button class="blockMenu" ng-click="blockMenu"></button>
         </div>
+        </div>
     </div>
 
 </div>
 
 <!--the list view-->
-<div class="listBox">
+<div ng-controller="dropController" id="listBox" class="ui-widget-content">
 
 </div>
 
