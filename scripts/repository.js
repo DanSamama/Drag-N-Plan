@@ -52,16 +52,20 @@
         $(function () {
             $(".block").draggable()
         })
-
-
     });
 
 
     myApp.controller("typeController", function ($scope) {
-        $scope.addNewType = function() {
-            
-    
+        //open a "create child modal" when clicking the "type" button. 
+        $scope.createChild = function() {
+            $scope.createChild = true
+
+        };
+        //hiding the "create cild" modal when clicking "save"
+        $scope.saveChild = function () {
+            $scope.createChild = false
         }
+
     })
 
 })

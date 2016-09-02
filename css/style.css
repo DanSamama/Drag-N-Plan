@@ -35,9 +35,9 @@ input[type='file'] {
     padding: 10px;
     border-radius: 5%;
 }
-.block {
+.block.ui-widget-content.ui-draggable.ui-draggable-handle {
     width: 200px;
-    /*border-collapse: collapse;*/
+    border-collapse: collapse;
     border: 1px solid black;
     padding: 10px;
     margin:2%;

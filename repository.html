@@ -16,9 +16,12 @@
     <link href="css/jquery-ui-1.12.0/jquery-ui.css" rel="stylesheet">
 
 </head>
-
 <body>
 
+
+
+<!--creating the name and dates of repository calendar-->
+<!--todo - get data from db. -->
 
 <div ng-controller="repoController">
     <span><h3>{{title}}</h3>{{titleDate}}</span>
@@ -26,11 +29,19 @@
 
 
 <div ng-controller="typeController" >
-    <button id="newType" ng-click="addNewType" >+</button>
-    <form id="createTypeForm" ng-show="createTypeForm">
-        <input type="color" value="color">
+    <button id="type" ng-click="createChild()" >+</button>
+
+    <form  ng-show="createChild==true" id="createTypeForm">
+        <input type="text" placeholder="Title" ng-model="newBlock.miniTitle">
+        <input type="time" placeholder="30 Min." ng-model="newBlock.length">
+        <input type="submit" value="Save" ng-click="saveChild()">
     </form>
 </div>
+
+
+
+<!--creating the child boxes (hard coded in array not. -->
+<!--todo - get block array from DB -->
 
 <div class="repositoryBox" ng-controller="blockController">
 
@@ -59,10 +70,6 @@
 
 </div>
 
-<!--&lt;!&ndash;the list view&ndash;&gt;-->
-<!--<div ng-controller="dropController" id="listBox" class="ui-widget-content">-->
-
-<!--</div>-->
 
 
 
