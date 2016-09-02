@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html data-ng-app="dragNdrop" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/angular%20(1).js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular-route.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>"
+    <script src="scripts/repository.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/jquery-ui-1.12.0/jquery-ui.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+<!--creating the name and dates of repository calendar-->
+<!--todo - get data from db. -->
+
+<div ng-controller="repoController">
+    <span><h3>{{title}}</h3>{{titleDate}}</span>
+</div>
+
+
+
+
+<!--creating the child boxes (hard coded in array not. -->
+<!--todo - get block array from DB -->
+
+<div class="repositoryBox" ng-controller="blockController">
+
+  <form name="createTypeForm" ng-submit="addChildToBoard()">
+        <input type="text" placeholder="Type" ng-model="block.type">
+        <input type="text" placeholder="Title" ng-model="block.miniTitle">
+        <input type="text" placeholder="30 Min" ng-model="block.length">
+        <input type="submit" value="Save">
+    </form>
+
+    <input type="text" placeholder="Search by Type" ng-model="searchBlock.type" />
+    <input type="text" placeholder="Search any content" ng-model="searchText" />
+
+
+    <div ng-repeat="block in blocks | filter: searchBlock | filter: search">
+        <div class="block ui-widget-content" >
+            <div>
+                <div class="blockType">{{block.type}}</div>
+                <div class="miniTitle">{{block.miniTitle}}</div>
+            </div>
+
+            <div class="blockLength">
+                {{block.length}}
+            </div>
+            <div>
+
+                <input type="file" id="myFile">
+
+                <button class="blockMenu" ng-click="blockMenu"></button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>

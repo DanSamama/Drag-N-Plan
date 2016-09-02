@@ -1,0 +1,74 @@
+
+input[type='file'] {
+  color: transparent;
+}
+
+.type{
+     display: inline-block;
+    height: 80px;
+    width: 80px;
+    border: 1px solid gray;
+    border-top-right-radius: 0px;
+}
+#typesHolder{
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    border: 1px solid gray;
+    border-top-right-radius: 0px;
+
+}
+#listBox{
+    width: 38vw;
+    height: 1000px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5%;
+    display: inline-block;
+
+}
+
+.repositoryBox {
+    display: inline-block;
+    width: 60vw;
+    height: 1000px;
+    padding: 10px;
+    border-radius: 5%;
+}
+.block.ui-widget-content.ui-draggable.ui-draggable-handle {
+    width: 200px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 10px;
+    margin:2%;
+    border-radius: 5%;
+}
+
+.blockMenu {
+    float: right;
+    padding: 2px;
+    margin: 2px;
+    display: inline-block;
+}
+.attach {
+    padding: 2px;
+    margin: 2px;
+    display: inline-block;
+}
+.blockType {
+
+    height: 40px;
+    width: 40px;
+    border: 1px solid gray;
+    border-top-right-radius: 0px;
+    display: inline-block;
+}
+.miniTitle {
+    text-align: center;
+    margin-left: 5px;
+    border-top-right-radius: 0px;
+    display: inline-block;
+}
+.blockLength {
+    text-align: center;
+}
