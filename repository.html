@@ -49,7 +49,7 @@
     <div ng-repeat="block in blocks | filter: searchBlock | filter: search">
         <div class="block ui-widget-content" >
             <div>
-                <div class="blockType">{{block.type}}</div>
+                <div class="blockType vignette">{{block.type}}</div>
                 <div class="miniTitle">{{block.miniTitle}}</div>
             </div>
 
@@ -58,7 +58,7 @@
             </div>
             <div>
 
-                <input type="file" id="myFile">
+                <input type="file" id="myFile" value="">
 
                 <button class="blockMenu" ng-click="blockMenu"></button>
             </div>

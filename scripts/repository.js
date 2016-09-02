@@ -5,7 +5,7 @@
             $scope.title = "ITC Bootcamp, summer 2016";
             $scope.titleDate = "1/5-21/9/2016"
         });
-    
+
 
     
     myApp.controller("blockController", function ($scope) {
