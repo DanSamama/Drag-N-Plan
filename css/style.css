@@ -1,5 +1,5 @@
 body{
-    background-color: #E0E0E0 !important;
+    /*background-color:  !important;*/
 }
 input[type='file'] {
   color: transparent;
@@ -39,7 +39,7 @@ input[type='file'] {
     padding: 10px;
     border-radius: 5%;
 }
-.block.ui-widget-content.ui-draggable.ui-draggable-handle {
+div.block.ui-widget-content.ui-draggable.ui-draggable-handle {
     width: 200px;
     border-collapse: collapse;
     padding: 10px;

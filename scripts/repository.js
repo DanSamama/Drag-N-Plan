@@ -7,7 +7,7 @@
         });
 
 
-    
+
     myApp.controller("blockController", function ($scope) {
         var blocks = [
             {type: "HTML", miniTitle: "Basic HTML", length: '50'},
@@ -31,10 +31,11 @@
             $scope.block.miniTitle = '';
             $scope.block.length = '';
         };
-        
-        
+
+
         //search filter by block type name:
         $scope.searchBlock = function(item) {
+            $(".block").draggable({revert:true});
             if ($scope.searchBlock.type == undefined){              //if we havent printed anything in the search box yet.
                 return true;                                        //if the func return true the element will be display every item (row) on the page
             }
@@ -50,6 +51,7 @@
 
         //search filter by any content existing in the block
         $scope.search = function(item) {
+            $(".block").draggable({revert:true});
             if ($scope.searchText == undefined){
                 return true;
             }
@@ -61,10 +63,7 @@
             return false;
         };
 
-        //this function makes the blocks draggable
-        $(function () {
-            $(".block").draggable()
-        })
+       
 
 
     });
