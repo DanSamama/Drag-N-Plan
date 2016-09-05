@@ -142,33 +142,8 @@
 
     });
 
-})
-();
 
-// $(".block").draggable({
-//     revert:true,
-//     cursor: 'move',
-//     helper: 'original'
-//     // containment: '.slot'
-// });
-//
-//
-// $('.slot').droppable( {
-//     accept: 'div.block',
-//     hoverClass: 'hovered',
-//     activeClass: 'active',
-//     revert: true,
-//     tolerance: 'pointer',
-//
-//     drop: function(event, ui){
-//         $(this).append(block);
-//         //$("li.to-drag").addClass("placeholder");
-//         $(this).droppable('disable', 'false');
-//     }
-// } );
-
-
-        //Mother
+           //Mother
 
     myApp.controller("MotherController", function ($scope) {
 
@@ -193,3 +168,28 @@
         };
 
     });
+
+})
+();
+
+// $(".block").draggable({
+//     revert:true,
+//     cursor: 'move',
+//     helper: 'original'
+//     // containment: '.slot'
+// });
+//
+//
+// $('.slot').droppable( {
+//     accept: 'div.block',
+//     hoverClass: 'hovered',
+//     activeClass: 'active',
+//     revert: true,
+//     tolerance: 'pointer',
+//
+//     drop: function(event, ui){
+//         $(this).append(block);
+//         //$("li.to-drag").addClass("placeholder");
+//         $(this).droppable('disable', 'false');
+//     }
+// } );
