@@ -51,82 +51,80 @@
 
         //search filter by any content existing in the block
         $scope.search = function(item) {
-            $(".block").draggable({
-                revert:true,
-                cursor: 'move',
-                helper: 'original'
+
+            var dragOption = {
+                delay: 10,
+                distance: 5,
+                revert: 'invalid',
+                start: function (event, ui) {
+                    $(".item").each(function () {
+                        $(this).data("original", $(this).position());
+                    });
+                },
+                drag: function (event, ui) {
+                    var offset = ui.position;
+                },
+                stop: function (event, ui) {
+                    validate($(".ui-selected").not(ui.draggable));
+                }
+            };
+            var dropOption = {
+                accept: '.block',
+                activeClass: 'myclass',
+                drop: function (event, ui) {
+                    if ($(this).is(".slot") && !$(this).has(".item").length) {
+                        $(this).append(ui.draggable.css({
+                            top: 0,
+                            left: 0
+                        }));
+                    } else {
+                        console.log("reverting");
+                        ui.draggable.animate({
+                            top: 0,
+                            left: 0
+                        }, "slow");
+                    }
+                    validate($(".ui-selected").not(ui.draggable));
+                }
+            };
+
+            $(".repositoryBox").selectable({
+                filter: ".item",
+                start: function (event, ui) {
+                    $(".ui-selected").draggable("destroy");
+                },
+                stop: function (event, ui) {
+                    $(".ui-selected").draggable(dragOption)
+                }
             });
+            $(".slot").droppable(dropOption);
 
+            function validate($draggables) {
 
-            $('#trash').droppable( {
+                $draggables.each(function () {
+                    console.log($($(this).data("target")));
+                    var $target = $($(this).data("target")).filter(function (i, elm) {
+                        console.log($(this).is(".slot") && !$(this).has(".item").length);
+                        return $(this).is(".slot") && !$(this).has(".item").length;
+                    });
 
-            } );
+                    if ($target.length) {
+                        $target.append($(this).css({
+                            top: 0,
+                            left: 0
+                        }))
+                    } else {
+                        $(this).animate({
+                            top: 0,
+                            left: 0
+                        }, "slow");
+                    }
 
-          
-
-
-            // $("#trash").droppable({
-            //     accept: ".block > div",
-            //     classes: {
-            //         "ui-droppable-active": "ui-state-highlight"
-            //     },
-            //     drop: function( event, ui ) {
-            //         deleteImage( ui.draggable );
-            //     }
-            // });
-            //
-            // // Let the gallery be droppable as well, accepting items from the trash
-            // $(".repositoryBox").droppable({
-            //     accept: "#trash div",
-            //     classes: {
-            //         "ui-droppable-active": "custom-state-active"
-            //     },
-            //     drop: function( event, ui ) {
-            //         recycleImage( ui.draggable );
-            //     }
-            // });
-            //
-            // // Image deletion function
-            // var recycle_icon = "<a href='link/to/recycle/script/when/we/have/js/off' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
-            // function deleteImage( $item ) {
-            //     $item.fadeOut(function() {
-            //         var $list = $( "ul", $trash ).length ?
-            //             $( "ul", $trash ) :
-            //             $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $trash );
-            //
-            //         $item.find( "a.ui-icon-trash" ).remove();
-            //         $item.append( recycle_icon ).appendTo( $list ).fadeIn(function() {
-            //             $item
-            //                 .animate({ width: "48px" })
-            //                 .find( "img" )
-            //                 .animate({ height: "36px" });
-            //         });
-            //     });
-            // }
-            //
-            // // Image recycle function
-            // var trash_icon = "<a href='link/to/trash/script/when/we/have/js/off' title='Delete this image' class='ui-icon ui-icon-trash'>Delete image</a>";
-            // function recycleImage( $item ) {
-            //     $item.fadeOut(function() {
-            //         $item
-            //             .find( "a.ui-icon-refresh" )
-            //             .remove()
-            //             .end()
-            //             .css( "width", "96px")
-            //             .append( trash_icon )
-            //             .find( "img" )
-            //             .css( "height", "72px" )
-            //             .end()
-            //             .appendTo( $gallery )
-            //             .fadeIn();
-            //     });
-            // }
-
-
-
-
-
-
+                });
+                $(".ui-selected").data("original", null)
+                    .data("target", null)
+                    .removeClass("ui-selected");
+            }
 
 
 
@@ -142,12 +140,29 @@
             return false;
         };
 
-
-
-
     });
-
-
 
 })
 ();
+
+// $(".block").draggable({
+//     revert:true,
+//     cursor: 'move',
+//     helper: 'original'
+//     // containment: '.slot'
+// });
+//
+//
+// $('.slot').droppable( {
+//     accept: 'div.block',
+//     hoverClass: 'hovered',
+//     activeClass: 'active',
+//     revert: true,
+//     tolerance: 'pointer',
+//
+//     drop: function(event, ui){
+//         $(this).append(block);
+//         //$("li.to-drag").addClass("placeholder");
+//         $(this).droppable('disable', 'false');
+//     }
+// } );
