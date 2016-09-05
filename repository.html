@@ -27,6 +27,40 @@
     <span><h3>{{title}}</h3>{{titleDate}}</span>
 </div>
 
+ <!--Creating the mother box (type of lesson you wanna add)-->
+    <div class="CreateMotherType" ng-controller="MotherController">
+        <div> Type </div>
+
+        <button  href="#myPopup" data-rel="popup" ng-click="showme=true" class="generateForm">+</button>
+
+        <form id="myPopup" data-role="popup" ng-show="showme" name="createTypeForm" ng-submit="addMotherToBoard()">
+            <input type="text" placeholder="HTML" ng-model="block.field" >
+            <input type="text" placeholder="Color" ng-model="block.color">
+            <input type="text" placeholder="30 Min" ng-model="block.length">
+            <input type="submit" value="Save">
+        </form>
+
+
+        <div  ng-repeat="block in motherBlock" class="parentBlock">
+            <button ng-click>
+                <div class="block ui-widget-content" >
+                    <div>
+                        <div class="blockType vignette">{{block.field}}</div>
+                        <div>{{block.color}}</div>
+                    </div>
+
+                    <div class="blockLength">
+                        {{block.length}}
+                    </div>
+                    <div>
+                        <button class="blockMenu" ng-click="blockMenu"></button>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+
+    </div>
 
 
 
