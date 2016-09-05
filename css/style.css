@@ -106,3 +106,6 @@ div.block.ui-widget-content.ui-draggable.ui-draggable-handle {
     width: 90%;
     border: 1px solid;
 }
+.CreateMotherType{
+    display: inline-block;
+}

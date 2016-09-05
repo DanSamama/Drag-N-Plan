@@ -166,3 +166,30 @@
 //         $(this).droppable('disable', 'false');
 //     }
 // } );
+
+
+        //Mother
+
+    myApp.controller("MotherController", function ($scope) {
+
+        var motherBlock = [
+            {field: "HTML", color: "Rouge", length: '50'},
+            {field: "HTML", color: "Rouge", length: '50'}
+        ];
+        $scope.motherBlock = motherBlock;
+
+
+        $scope.addMotherToBoard = function (block) {
+            $scope.motherBlock.push({
+                field : $scope.block.field,
+                color : $scope.block.color,
+                length: $scope.block.length
+            });
+            $scope.block.field ='';
+            $scope.block.color = '';
+            $scope.block.length = '';
+
+    $scope.showme = false;
+        };
+
+    });
