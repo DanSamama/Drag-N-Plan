@@ -1,10 +1,14 @@
-
+body{
+    /*background-color:  !important;*/
+}
 input[type='file'] {
-  color: transparent;
+    color: transparent;
+    display: inline-block;
+    width: 20px;
 }
 
 .type{
-     display: inline-block;
+    display: inline-block;
     height: 80px;
     width: 80px;
     border: 1px solid gray;
@@ -21,7 +25,7 @@ input[type='file'] {
 #listBox{
     width: 38vw;
     height: 1000px;
-    border: 1px solid black;
+    border: 1px solid darkgrey;
     padding: 10px;
     border-radius: 5%;
     display: inline-block;
@@ -35,10 +39,9 @@ input[type='file'] {
     padding: 10px;
     border-radius: 5%;
 }
-.block.ui-widget-content.ui-draggable.ui-draggable-handle {
+div.block.ui-widget-content.ui-draggable.ui-draggable-handle {
     width: 200px;
     border-collapse: collapse;
-    border: 1px solid black;
     padding: 10px;
     margin:2%;
     border-radius: 5%;
@@ -56,10 +59,8 @@ input[type='file'] {
     display: inline-block;
 }
 .blockType {
-
     height: 40px;
     width: 40px;
-    border: 1px solid gray;
     border-top-right-radius: 0px;
     display: inline-block;
 }
@@ -71,4 +72,37 @@ input[type='file'] {
 }
 .blockLength {
     text-align: center;
+}
+
+
+.vignette {
+    position: relative;
+}
+
+.vignette:after {
+    border-radius: 10%;
+
+    box-shadow: inset 0 0 1em #00BCD4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    content: "";
+}
+
+#trash {
+    display: inline-block;
+    border-color: #2b2b2b;
+    height: 100vh;
+    width: 35vw;
+    border: 1px solid;
+
+}
+.slot {
+     border-color: #2b2b2b;
+    height: 10vh;
+    width: 90%;
+    border: 1px solid;
 }
